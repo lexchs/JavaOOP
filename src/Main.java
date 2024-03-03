@@ -1,29 +1,38 @@
-import clients.*;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import clients.Animal;
+import clients.impl.*;
+import workers.impl.Doctor;
+import workers.impl.Nurse;
 
 public class Main {
     public static void main(String[] args) {
-        Lion test1 = new Lion();
-        Dog test2 = new Dog();
-        Parrot test3 = new Parrot();
-        Snake test4 = new Snake();
-        Dolphin test5 = new Dolphin();
-        Duck test6 = new Duck();
-        Jiraffe test7 = new Jiraffe();
-        Penguin test8 = new Penguin();
-        test1.fly();
-        test2.fly();
-        test3.swim();
-        test4.toGo();
-        test4.fly();
-        test5.toGo();
-        test5.fly();
-        test7.swim();
-        test7.fly();
-        test8.fly();
+        VeterinaryClinic clinic = new VeterinaryClinic("Dr. Doolittle");
+        Lion lion = new Lion();
+        Dog dog = new Dog();
+        Dolphin dolphin = new Dolphin();
+        Duck duck = new Duck();
+        Parrot parrot = new Parrot();
+        Snake snake = new Snake();
+        Doctor doc = new Doctor();
+        Nurse nur = new Nurse();
+        clinic.addAnimal(lion);
+        clinic.addAnimal(dog);
+        clinic.addAnimal(dolphin);
+        clinic.addAnimal(duck);
+        clinic.addAnimal(parrot);
+        clinic.addAnimal(snake);
+        clinic.addPersonal(doc);
+        clinic.addPersonal(nur);
 
+//        System.out.println(clinic.getListFlyable());
+//        System.out.println(clinic.getListSwimable());
+//        System.out.println(clinic.getListGoable());
+
+//        System.out.println(clinic.getAnimals());
+//        clinic.removeAnimal(dog);
+//        System.out.println(clinic.getAnimals());
+
+//        System.out.println(clinic.getPersonal());
+//        clinic.removePersonal(nur);
+//        System.out.println(clinic.getPersonal());
     }
 }
